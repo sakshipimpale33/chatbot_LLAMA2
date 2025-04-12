@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+os.environ["LANGCHAIN_TRACING_V2"]="true"
+os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
+
 
 prompt=ChatPromptTemplate.from_message([
     ("You are helpful assistant"),
@@ -15,7 +18,7 @@ prompt=ChatPromptTemplate.from_message([
 ])
 
 
-st.title ('Langchain Demo with OPENAI API ')
+st.title ('Langchain Demo with LLAMA2 API ')
 input_text=st.text_input("search topic u want")
 
 
